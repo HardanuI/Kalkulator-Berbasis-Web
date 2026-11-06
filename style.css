@@ -1,0 +1,145 @@
+/* Custom Neumorphic Styling & Physics */
+
+:root {
+  --neu-bg: #f4f6fa;
+  --neu-shadow-dark: #ced5e2;
+  --neu-shadow-light: #ffffff;
+  --neu-inset-dark: #caced8;
+  --neu-inset-light: #ffffff;
+  --pink-base: #e8a5b8;
+  --pink-shadow: rgba(195, 115, 140, 0.42);
+  --pink-inset-dark: #c4768c;
+  --pink-inset-light: #f7c5d4;
+}
+
+/* Outer Shell Neumorphism */
+.shadow-neu-outer {
+  box-shadow: 24px 24px 55px #d0d6e4,
+    -24px -24px 55px #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+/* Inset Screen Neumorphism */
+.shadow-neu-inset {
+  box-shadow: inset 5px 5px 12px var(--neu-inset-dark),
+    inset -5px -5px 12px var(--neu-inset-light);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Base Neumorphic Button */
+.neu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  background-color: var(--neu-bg);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 6px 6px 14px var(--neu-shadow-dark),
+    -6px -6px 14px var(--neu-shadow-light);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Circular Buttons */
+.neu-btn-circle {
+  border-radius: 9999px;
+  aspect-ratio: 1 / 1;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 105px;
+  margin: auto;
+}
+
+/* Button Hover State */
+.neu-btn:hover {
+  filter: brightness(1.02);
+}
+
+/* Button Pressed / Active Tactile State */
+.neu-btn:active,
+.neu-btn.is-pressed {
+  box-shadow: inset 3px 3px 6px var(--neu-shadow-dark),
+    inset -3px -3px 6px var(--neu-shadow-light);
+  transform: scale(0.95);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Equals Button (=) Distinctive Pink Pill */
+.neu-btn-equals {
+  background-color: var(--pink-base) !important;
+  border-radius: 9999px;
+  width: 100%;
+  height: 100%;
+  max-height: 105px;
+  margin: auto;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 6px 6px 16px var(--pink-shadow),
+    -4px -4px 12px rgba(255, 255, 255, 0.9);
+}
+
+.neu-btn-equals:hover {
+  background-color: #e49cb1 !important;
+  filter: brightness(1.02);
+}
+
+.neu-btn-equals:active,
+.neu-btn-equals.is-pressed {
+  background-color: #df94aa !important;
+  box-shadow: inset 3px 3px 7px var(--pink-inset-dark),
+    inset -3px -3px 7px var(--pink-inset-light);
+  transform: scale(0.965);
+}
+
+/* Utility / Small Icons */
+.neu-icon-btn {
+  background-color: var(--neu-bg);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 3px 3px 7px var(--neu-shadow-dark),
+    -3px -3px 7px var(--neu-shadow-light);
+  transition: all 0.12s ease;
+  outline: none;
+}
+
+.neu-icon-btn:hover {
+  box-shadow: 2px 2px 5px var(--neu-shadow-dark),
+    -2px -2px 5px var(--neu-shadow-light);
+}
+
+.neu-icon-btn:active {
+  box-shadow: inset 2px 2px 4px var(--neu-shadow-dark),
+    inset -2px -2px 4px var(--neu-shadow-light);
+  transform: scale(0.93);
+}
+
+/* Custom Scrollbar for History */
+#historyList::-webkit-scrollbar {
+  width: 5px;
+}
+
+#historyList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#historyList::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+#historyList::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dynamic text size adjustments */
+.text-dynamic-sm {
+  font-size: 2.2rem !important;
+}
+
+.text-dynamic-xs {
+  font-size: 1.6rem !important;
+}
